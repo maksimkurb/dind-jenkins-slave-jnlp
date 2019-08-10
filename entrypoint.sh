@@ -5,4 +5,5 @@ set -ex
 setup-docker &
 
 # call original entrypoint from jenkins/jnlp-slave
-exec jenkins-slave "$@"
+
+exec gosu jenkins /usr/local/bin/jenkins-slave "$@"
